@@ -7,12 +7,11 @@ body {
   align-items: center;
 }
 
-/* Header */
 .header-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #120323; /* Updated background color */
+  background-color: #120323;
   color: white;
   padding: 20px;
   width: 100%;
@@ -23,7 +22,6 @@ body {
   margin-right: 15px;
 }
 
-/* Main Container */
 #container {
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +31,6 @@ body {
   margin: 20px;
 }
 
-/* Main Content */
 main {
   flex: 2;
   display: flex;
@@ -42,7 +39,6 @@ main {
   padding: 20px;
 }
 
-/* Figure */
 figure {
   display: flex;
   flex-direction: column;
@@ -55,21 +51,19 @@ figure img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  border: 5px solid #d9043d; /* Image frame color */
-  object-fit: contain; /* Ensures the Puffin image is never cropped */
+  border: 5px solid #d9043d;
+  object-fit: contain;
 }
 
-/* Sidebar */
 aside {
   flex: 1;
-  background-color: #97bf04; /* Updated sidebar background color */
+  background-color: #97bf04;
   padding: 20px;
   max-width: 300px;
 }
 
-/* Footer */
 footer {
-  background-color: #d9043d; /* Updated footer background color */
+  background-color: #d9043d;
   color: white;
   text-align: center;
   padding: 10px;
@@ -77,25 +71,58 @@ footer {
   margin-top: 20px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1000px) {
+  #container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  main {
+      flex: 2;
+  }
+
+  aside {
+      flex: 1;
+      max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 999px) {
   #container {
       flex-direction: column;
       align-items: center;
   }
 
-  main, aside {
-      max-width: 100%;
+  .header-container {
+      flex-direction: row;
+      text-align: left;
+      justify-content: center;
+  }
+
+  .header-container img {
+      margin-right: 10px;
+  }
+
+  figure {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 300px;
+  }
+
+  figure img {
+      width: 300px;
   }
 
   aside {
-      order: -1;
       width: 100%;
+      max-width: none;
       text-align: center;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .header-container {
       flex-direction: column;
       text-align: center;
@@ -105,26 +132,24 @@ footer {
       margin: 0 0 10px 0;
   }
 
-  main, aside {
-      padding: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body {
-      padding: 10px;
-  }
-
   #container {
-      margin: 10px;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
   }
 
   figure {
-      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
   }
 
-  footer {
-      padding: 8px;
-      font-size: 14px;
+  figure img {
+      width: 100%;
+  }
+
+  aside {
+      width: 100%;
+      max-width: none;
   }
 }
